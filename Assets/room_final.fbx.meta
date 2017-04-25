@@ -1,0 +1,169 @@
+fileFormatVersion: 2
+guid: 435b29bdb256646299934c7c22f0ce6d
+timeCreated: 1493050436
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Accessory1
+    100002: BagLSD
+    100004: Cube
+    100006: Door
+    100008: Floor
+    100010: Key
+    100012: Knjiga
+    100014: Laptop
+    100016: LSD
+    100018: Milk
+    100020: Milk.001
+    100022: Ormar
+    100024: Paper
+    100026: Paper.001
+    100028: //RootNode
+    100030: Stol
+    100032: Stol.001
+    100034: Stolica
+    100036: Walls
+    400000: Accessory1
+    400002: BagLSD
+    400004: Cube
+    400006: Door
+    400008: Floor
+    400010: Key
+    400012: Knjiga
+    400014: Laptop
+    400016: LSD
+    400018: Milk
+    400020: Milk.001
+    400022: Ormar
+    400024: Paper
+    400026: Paper.001
+    400028: //RootNode
+    400030: Stol
+    400032: Stol.001
+    400034: Stolica
+    400036: Walls
+    2300000: Accessory1
+    2300002: BagLSD
+    2300004: Cube
+    2300006: Door
+    2300008: Floor
+    2300010: Key
+    2300012: Knjiga
+    2300014: Laptop
+    2300016: LSD
+    2300018: Milk
+    2300020: Milk.001
+    2300022: Ormar
+    2300024: Paper
+    2300026: Paper.001
+    2300028: Stol
+    2300030: Stol.001
+    2300032: Stolica
+    2300034: Walls
+    3300000: Accessory1
+    3300002: BagLSD
+    3300004: Cube
+    3300006: Door
+    3300008: Floor
+    3300010: Key
+    3300012: Knjiga
+    3300014: Laptop
+    3300016: LSD
+    3300018: Milk
+    3300020: Milk.001
+    3300022: Ormar
+    3300024: Paper
+    3300026: Paper.001
+    3300028: Stol
+    3300030: Stol.001
+    3300032: Stolica
+    3300034: Walls
+    4300000: Milk.001
+    4300002: LSD
+    4300004: BagLSD
+    4300006: Paper.001
+    4300008: Paper
+    4300010: Stol.001
+    4300012: Door
+    4300014: Milk
+    4300016: Key
+    4300018: Accessory1
+    4300020: Walls
+    4300022: Floor
+    4300024: Knjiga
+    4300026: Cube
+    4300028: Laptop
+    4300030: Ormar
+    4300032: Stol
+    4300034: Stolica
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
