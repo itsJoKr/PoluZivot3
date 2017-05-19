@@ -14,11 +14,13 @@ public class LevelManager : MonoBehaviour {
     public int drawDepth = -1000;
     public string nextLevel;
     public float loadLevelDelay = 3.0f;
+    public GameObject gameOverCanvas;
 
     // Use this for initialization
-    void Start () {
-		
-	}
+    void Start ()
+    {
+        gameOverCanvas.SetActive(false);
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -36,6 +38,18 @@ public class LevelManager : MonoBehaviour {
         Invoke("LoadNextScene", loadLevelDelay);
     }
 
+    public void ReloadLevel()
+    {
+        loadLevelDelay = 2;
+        fadeOut = true;
+        Invoke("ReloadScene", loadLevelDelay);
+    }
+
+    public void SetGameOver()
+    {
+        gameOverCanvas.SetActive(true);
+    }
+
     private void FadeOut()
     {
         alpha += fadeDir * fadeSpeed * Time.deltaTime;
@@ -48,6 +62,11 @@ public class LevelManager : MonoBehaviour {
         GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), fadeTexture);
     }
     
+    private void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     private void LoadNextScene()
     {
         SceneManager.LoadScene(nextLevel);

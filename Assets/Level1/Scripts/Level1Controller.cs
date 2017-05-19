@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Level1Controller : MonoBehaviour {
     
-    public AudioClip shittingSound;
+    public AudioClip useToiletSound;
     public AudioClip pickUpSound;
     public AudioClip openDoorAttempt;
 
@@ -54,12 +54,13 @@ public class Level1Controller : MonoBehaviour {
 
     private void HandleToilet(GameObject toilet)
     {
+        // easter egg joke
         if (!audioSource.isPlaying)
         {
-            GetComponentInParent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;
+            GetComponentInParent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().ForceStop();
             this.toilet = toilet;
-            audioSource.PlayOneShot(shittingSound);
-            Invoke("FlushToilet", shittingSound.length);
+            audioSource.PlayOneShot(useToiletSound);
+            Invoke("FlushToilet", useToiletSound.length);
         }
     }
 
@@ -71,7 +72,7 @@ public class Level1Controller : MonoBehaviour {
 
     private void FlushToilet()
     {
-        GetComponentInParent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
+        GetComponentInParent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().ForceStart();
         if (toilet != null) toilet.GetComponent<ToiletController>().Flush();
     }
 

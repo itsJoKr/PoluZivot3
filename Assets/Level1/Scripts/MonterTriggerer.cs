@@ -25,6 +25,11 @@ public class MonterTriggerer : MonoBehaviour {
         audioSource.PlayOneShot(spotlightSound);
         if (light != null) light.intensity = 50;
         spotlightOn = true;
+
+        for (int i = 0; i < spotlight.transform.childCount; i++)
+        {
+            spotlight.transform.GetChild(i).GetComponent<Light>().intensity = 2.5f;
+        }
     }
 
     private void MonsterMove()

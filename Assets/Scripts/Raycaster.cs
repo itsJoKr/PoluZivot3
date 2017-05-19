@@ -34,7 +34,7 @@ public class Raycaster : MonoBehaviour {
                     SetCrosshairLabel("Take the LSD");
                     break;
                 case "Toilet Seat":
-                    SetCrosshairLabel("Take a shit");
+                    SetCrosshairLabel("Use a toilet");
                     break;
             }
         }

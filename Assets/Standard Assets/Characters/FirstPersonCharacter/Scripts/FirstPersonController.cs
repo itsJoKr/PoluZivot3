@@ -42,6 +42,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+        private float temp_WalkSpeed = -1, temp_RunSpeed = -1;
+
         // Use this for initialization
         private void Start()
         {
@@ -83,6 +85,27 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
         }
 
+
+        public void UnlockCursor()
+        {
+            m_MouseLook.SetCursorLock(false);
+        }
+
+        public void ForceStop()
+        {
+            temp_WalkSpeed = m_WalkSpeed;
+            temp_RunSpeed = m_RunSpeed;
+            m_WalkSpeed = 0;
+            m_RunSpeed = 0;
+        }
+
+        public void ForceStart()
+        {
+            if (temp_WalkSpeed < 0 || temp_RunSpeed < 0)
+                return;
+            m_WalkSpeed = temp_WalkSpeed;
+            m_RunSpeed = temp_RunSpeed;
+        }
 
         private void PlayLandingSound()
         {
@@ -136,8 +159,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void PlayJumpSound()
         {
+            float tempVol = m_AudioSource.volume;
             m_AudioSource.clip = m_JumpSound;
+            m_AudioSource.volume = 0.5f;
             m_AudioSource.Play();
+            m_AudioSource.volume = tempVol;
         }
 
 
@@ -170,7 +196,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // excluding sound at index 0
             int n = Random.Range(1, m_FootstepSounds.Length);
             m_AudioSource.clip = m_FootstepSounds[n];
-            m_AudioSource.PlayOneShot(m_AudioSource.clip);
+            m_AudioSource.PlayOneShot(m_AudioSource.clip, 0.5f);
             // move picked sound to index 0 so it's not picked next time
             m_FootstepSounds[n] = m_FootstepSounds[0];
             m_FootstepSounds[0] = m_AudioSource.clip;
