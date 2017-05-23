@@ -1,0 +1,229 @@
+fileFormatVersion: 2
+guid: dd5eacedbc59c4c12bb0b22f1daa96b0
+timeCreated: 1495374709
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Accessory1
+    100002: Apartment
+    100004: //RootNode
+    100006: Apartment.001
+    100008: BackTable
+    100010: Box004
+    100012: Box004.001
+    100014: Cube.001
+    100016: Cube.005
+    100018: Cube.006
+    100020: Cube.011
+    100022: Cube.012
+    100024: Cylinder.011
+    100026: Grating
+    100028: honeycomb
+    100030: Key.001
+    100032: Lampa
+    100034: Lampa.001
+    100036: Lampa.002
+    100038: Lampa.003
+    100040: Lampa.004
+    100042: Plane.003
+    100044: Plane.005
+    100046: speaker
+    100048: Stolic
+    100050: Table
+    100052: TV
+    100054: UpFence
+    100056: Upstairs
+    100058: Windows1
+    100060: Windows2
+    400000: Accessory1
+    400002: Apartment
+    400004: //RootNode
+    400006: Apartment.001
+    400008: BackTable
+    400010: Box004
+    400012: Box004.001
+    400014: Cube.001
+    400016: Cube.005
+    400018: Cube.006
+    400020: Cube.011
+    400022: Cube.012
+    400024: Cylinder.011
+    400026: Grating
+    400028: honeycomb
+    400030: Key.001
+    400032: Lampa
+    400034: Lampa.001
+    400036: Lampa.002
+    400038: Lampa.003
+    400040: Lampa.004
+    400042: Plane.003
+    400044: Plane.005
+    400046: speaker
+    400048: Stolic
+    400050: Table
+    400052: TV
+    400054: UpFence
+    400056: Upstairs
+    400058: Windows1
+    400060: Windows2
+    2300000: Accessory1
+    2300002: Apartment
+    2300004: Apartment.001
+    2300006: BackTable
+    2300008: Box004
+    2300010: Box004.001
+    2300012: Cube.001
+    2300014: Cube.005
+    2300016: Cube.006
+    2300018: Cube.011
+    2300020: Cube.012
+    2300022: Cylinder.011
+    2300024: Grating
+    2300026: honeycomb
+    2300028: Key.001
+    2300030: Lampa
+    2300032: Lampa.001
+    2300034: Lampa.002
+    2300036: Lampa.003
+    2300038: Lampa.004
+    2300040: Plane.003
+    2300042: Plane.005
+    2300044: speaker
+    2300046: Stolic
+    2300048: Table
+    2300050: TV
+    2300052: UpFence
+    2300054: Upstairs
+    2300056: Windows1
+    2300058: Windows2
+    3300000: Accessory1
+    3300002: Apartment
+    3300004: Apartment.001
+    3300006: BackTable
+    3300008: Box004
+    3300010: Box004.001
+    3300012: Cube.001
+    3300014: Cube.005
+    3300016: Cube.006
+    3300018: Cube.011
+    3300020: Cube.012
+    3300022: Cylinder.011
+    3300024: Grating
+    3300026: honeycomb
+    3300028: Key.001
+    3300030: Lampa
+    3300032: Lampa.001
+    3300034: Lampa.002
+    3300036: Lampa.003
+    3300038: Lampa.004
+    3300040: Plane.003
+    3300042: Plane.005
+    3300044: speaker
+    3300046: Stolic
+    3300048: Table
+    3300050: TV
+    3300052: UpFence
+    3300054: Upstairs
+    3300056: Windows1
+    3300058: Windows2
+    4300000: Apartment.001
+    4300002: Lampa.004
+    4300004: Key.001
+    4300006: Cube.012
+    4300008: Cube.011
+    4300010: Plane.005
+    4300012: Plane.003
+    4300014: Cube.006
+    4300016: Cube.005
+    4300018: Cube.001
+    4300020: Cylinder.011
+    4300022: TV
+    4300024: Accessory1
+    4300026: BackTable
+    4300028: Table
+    4300030: Box004.001
+    4300032: Box004
+    4300034: Lampa.003
+    4300036: Lampa.002
+    4300038: Lampa.001
+    4300040: honeycomb
+    4300042: Stolic
+    4300044: Lampa
+    4300046: Grating
+    4300048: speaker
+    4300050: UpFence
+    4300052: Upstairs
+    4300054: Windows1
+    4300056: Windows2
+    4300058: Apartment
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 2
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

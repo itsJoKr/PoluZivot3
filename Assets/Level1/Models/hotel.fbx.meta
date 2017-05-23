@@ -259,6 +259,7 @@ ModelImporter:
     2300146: Text.006
     2300148: ToiletSeat
     2300150: Walls
+    2300152: Monster
     3300000: Accessory1
     3300002: Bed1
     3300004: Bed2
@@ -335,6 +336,7 @@ ModelImporter:
     3300146: Text.006
     3300148: ToiletSeat
     3300150: Walls
+    3300152: Monster
     4300000: Lamperija.001
     4300002: Lamperija.000
     4300004: SlideDoor
@@ -447,7 +449,7 @@ ModelImporter:
     addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
@@ -480,7 +482,7 @@ ModelImporter:
     hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
