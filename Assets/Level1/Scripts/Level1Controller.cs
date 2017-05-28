@@ -28,10 +28,21 @@ public class Level1Controller : MonoBehaviour {
 
         if (Input.GetMouseButton(0) && hitObject != null)
         {
-            if (hitObject.name == "Door") HandleDoorOpen(hitObject);
-            if (hitObject.name == "Slide Door") HandleSlideDoor(hitObject);
-            if (hitObject.name == "Toilet Seat") HandleToilet(hitObject);
-            if (hitObject.name == "Key") TakeKey(hitObject);
+            switch (hitObject.name)
+            {
+                case "Door":
+                    HandleDoorOpen(hitObject);
+                    break;
+                case "Slide Door":
+                    HandleSlideDoor(hitObject);
+                    break;
+                case "Toilet Seat":
+                    HandleToilet(hitObject);
+                    break;
+                case "Key":
+                    TakeKey(hitObject);
+                    break;
+            }
         }
     }
 

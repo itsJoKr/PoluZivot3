@@ -18,17 +18,18 @@ public class Raycaster : MonoBehaviour {
             switch (hit.transform.name)
             {
                 case "Key":
+                case "Door Key":
                     SetCrosshairLabel("Take the key");
                     break;
                 case "Door":
                 case "Slide Door":
-                    SetCrosshairLabel("Open the door");
+                case "Doorway":
+                case "Safe Door":
+                case "Drawer":
+                    SetCrosshairLabel("Open the " + hit.transform.name.ToLower());
                     break;
                 case "Milk":
                     SetCrosshairLabel("Drink some milk");
-                    break;
-                case "Drawer":
-                    SetCrosshairLabel("Open the drawer");
                     break;
                 case "BagLSD":
                     SetCrosshairLabel("Take the LSD");
@@ -36,9 +37,15 @@ public class Raycaster : MonoBehaviour {
                 case "Toilet Seat":
                     SetCrosshairLabel("Use a toilet");
                     break;
+                case "Radio":
+                    SetCrosshairLabel("Turn on");
+                    break;
+                default:
+                    SetCrosshairLabel(null);
+                    SetInfoLabel(null);
+                    break;
             }
-        }
-        else
+        } else
         {
             SetCrosshairLabel(null);
             SetInfoLabel(null);

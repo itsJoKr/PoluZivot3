@@ -5,6 +5,7 @@ using UnityEngine;
 public class SlideDoorController : MonoBehaviour {
 
     public AudioClip slidingSound;
+    public GameObject smokeParticles;
     public List<GameObject> lightsToDestroy;
 
     private AudioSource audioSource;
@@ -29,10 +30,14 @@ public class SlideDoorController : MonoBehaviour {
 
     public void Open()
     {
-        isOpen = true;
-        audioSource.PlayOneShot(slidingSound);
-        anim.SetTrigger("Open");
-        DestroyLights();
+        if (!isOpen)
+        {
+            isOpen = true;
+            audioSource.PlayOneShot(slidingSound);
+            anim.SetTrigger("Open");
+            DestroyLights();
+            smokeParticles.GetComponent<ParticleSystem>().Play();
+        }
     }
 
     private void DestroyLights()

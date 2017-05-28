@@ -19,7 +19,8 @@ public class LevelManager : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        gameOverCanvas.SetActive(false);
+        if (gameOverCanvas != null)
+            gameOverCanvas.SetActive(false);
     }
 	
 	// Update is called once per frame
@@ -47,7 +48,8 @@ public class LevelManager : MonoBehaviour {
 
     public void SetGameOver()
     {
-        gameOverCanvas.SetActive(true);
+        if (gameOverCanvas != null)
+            gameOverCanvas.SetActive(true);
     }
 
     private void FadeOut()

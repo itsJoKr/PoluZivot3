@@ -6,12 +6,15 @@ public class DoorController : MonoBehaviour {
 
     public float maxOpenAngle = 90;
     public float openSpeed = 10;
+    public AudioClip openSound;
+
+    private AudioSource audioSource;
     private float openAngle = 0;
     private bool isOpening = false;
     
 	// Use this for initialization
 	void Start () {
-		
+        audioSource = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -25,6 +28,8 @@ public class DoorController : MonoBehaviour {
     public void Open()
     {
         isOpening = true;
+        if (!audioSource.isPlaying)
+            audioSource.PlayOneShot(openSound, 0.2f);
     }
 
     private void Push()
