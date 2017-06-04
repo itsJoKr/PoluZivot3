@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 5ffb42e06cb37594d9448e59b4cb0d30
+timeCreated: 1496568379
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -1
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: House of Horror
+  fontNames:
+  - House of Horror
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

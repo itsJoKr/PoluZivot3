@@ -40,7 +40,7 @@ public class LevelFinishHandler : MonoBehaviour {
         levelManager.LoadNextLevel();
     }
 
-    private void Die()
+    public void Die()
     {
         fpsController.UnlockCursor();
         fpsController.enabled = false;

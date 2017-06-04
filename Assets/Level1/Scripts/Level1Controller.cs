@@ -19,6 +19,8 @@ public class Level1Controller : MonoBehaviour {
     {
         raycaster = transform.GetComponent<Raycaster>();
         audioSource = GetComponent<AudioSource>();
+        if (MusicManager.MM != null)
+            MusicManager.MM.PlayLevelMusic(1);
     }
 
     // Update is called once per frame

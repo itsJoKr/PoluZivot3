@@ -9,12 +9,14 @@ public class LevelManager : MonoBehaviour {
     private int fadeDir = 1;
     private bool fadeOut = false;
 
+    public GameObject crosshair;
     public Texture2D fadeTexture;
     public float fadeSpeed = 0.2f;
     public int drawDepth = -1000;
     public string nextLevel;
     public float loadLevelDelay = 3.0f;
     public GameObject gameOverCanvas;
+    public GameObject UICamera;
 
     // Use this for initialization
     void Start ()
@@ -48,8 +50,10 @@ public class LevelManager : MonoBehaviour {
 
     public void SetGameOver()
     {
+        Destroy(crosshair);
         if (gameOverCanvas != null)
             gameOverCanvas.SetActive(true);
+        UICamera.GetComponent<Camera>().depth = Camera.main.depth + 1;
     }
 
     private void FadeOut()

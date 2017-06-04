@@ -14,6 +14,8 @@ public class GUICrosshair : MonoBehaviour {
 
     void Start()
     {
+        crosshairTexture.anisoLevel = 9;
+
         mainLabelStyle = new GUIStyle();
         infoLabelStyle = new GUIStyle();
 

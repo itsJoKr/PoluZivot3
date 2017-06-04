@@ -24,10 +24,13 @@ public class LightsHandler : MonoBehaviour {
     {
         foreach (GameObject lightObject in lights)
         {
+            Debug.Log(lightObject.transform.parent.gameObject.name);
             Light light = lightObject.GetComponent<Light>();
             LightFlicker flicker = lightObject.GetComponent<LightFlicker>();
-            if (light != null) light.intensity = 0.1f * light.intensity;
+            GameObject bulb = lightObject.transform.parent.gameObject.name == "Bulb" ? lightObject.transform.parent.gameObject : null;
+            if (light != null) light.enabled = false;
             if (flicker != null) flicker.isFlickering = false;
+            if (bulb != null) UnlightBulb(bulb);
         }
 
         lightsOut = true;
@@ -37,5 +40,11 @@ public class LightsHandler : MonoBehaviour {
     private void PlayLightsOutSound()
     {
         audioSource.PlayOneShot(LightsOutSound);
+    }
+
+    private void UnlightBulb(GameObject bulb)
+    {
+        Material mat = bulb.GetComponent<Renderer>().material;
+        mat.SetColor("_EmissionColor", Color.black);
     }
 }

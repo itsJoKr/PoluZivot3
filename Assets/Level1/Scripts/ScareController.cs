@@ -41,6 +41,6 @@ public class ScareController : MonoBehaviour {
     {
         scare = false;
         camera.transform.position = cameraStartPosition;
-        camera.depth = -10;
+        camera.depth = Camera.main.depth - 1;
     }
 }

@@ -8,17 +8,23 @@ public class Level2Controller : MonoBehaviour {
     public AudioClip pickUpSound;
     public AudioClip openAttemptSound;
     public AudioClip unlockAttemptSound;
+    public AudioClip openDoorSound;
+    public AudioClip openSafeSound;
 
     private AudioSource audioSource;
     private Raycaster raycaster;
     private bool hasDoorKey;
     private bool hasSafeKey;
+    private bool isDoorOpen;
+    private bool isSafeOpen;
 
 
     // Use this for initialization
     void Start () {
         audioSource = GetComponent<AudioSource>();
         raycaster = transform.GetComponent<Raycaster>();
+        if (MusicManager.MM != null)
+            MusicManager.MM.PlayLevelMusic(2);
     }
 	
 	// Update is called once per frame
@@ -49,9 +55,14 @@ public class Level2Controller : MonoBehaviour {
     private void HandleSafeOpen(GameObject safe)
     {
         if (!hasSafeKey)
-            HandleSafeFail();
-        else
+            AttemptDoorUnlock();
+        else if (!isSafeOpen)
+        {
+            if (!audioSource.isPlaying)
+                audioSource.PlayOneShot(openSafeSound);
             safe.GetComponent<Animator>().SetTrigger("Open");
+            isSafeOpen = true;
+        }
     }
 
     private void HandlePlayRadio(GameObject radio)
@@ -75,8 +86,13 @@ public class Level2Controller : MonoBehaviour {
     {
         if (!hasDoorKey)
             HandleDoorFail();
-        else
+        else if (!isDoorOpen)
+        {
+            if (!audioSource.isPlaying)
+                audioSource.PlayOneShot(openDoorSound);
             doorWay.GetComponent<Animator>().SetTrigger("Open");
+            isDoorOpen = true;
+        }
     }
 
     private void HandleDoorFail()
@@ -89,14 +105,14 @@ public class Level2Controller : MonoBehaviour {
         }
         else
         {
-            raycaster.SetInfoLabel("The door is locked");
-            if (!audioSource.isPlaying)
-                audioSource.PlayOneShot(openAttemptSound, 0.5f);
+            AttemptDoorUnlock();
         }
     }
 
-    private void HandleSafeFail()
+    private void AttemptDoorUnlock()
     {
-        throw new NotImplementedException();
+        raycaster.SetInfoLabel("The door is locked");
+        if (!audioSource.isPlaying)
+            audioSource.PlayOneShot(openAttemptSound, 0.5f);
     }
 }

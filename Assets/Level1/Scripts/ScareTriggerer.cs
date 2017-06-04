@@ -5,16 +5,27 @@ using UnityEngine;
 public class ScareTriggerer : MonoBehaviour {
 
     public GameObject scareController;
+    public AudioClip suspenseMusic;
     public bool scareOnce;
+
+    private bool engaged = false;
 
 	void OnTriggerEnter()
     {
-        if (scareController != null)
+        if (scareOnce && !engaged)
         {
-            scareController.GetComponent<ScareController>().Engage();
+            if (MusicManager.MM != null)
+                MusicManager.MM.PlaySituationClip(suspenseMusic);
+            Invoke("Scare", suspenseMusic.length + 1);
+            engaged = true;
         }
+    }
 
-        if (scareOnce)
-            scareController = null;
+    void Scare()
+    {
+        scareController.GetComponent<ScareController>().Engage();
+
+        if (!scareOnce)
+            engaged = false;
     }
 }
