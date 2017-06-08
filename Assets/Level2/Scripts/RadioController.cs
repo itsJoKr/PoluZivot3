@@ -6,7 +6,7 @@ public class RadioController : MonoBehaviour {
 
     public List<AudioClip> songs;
 
-    private AudioSource audioSource;
+    private static AudioSource audioSource;
 
 	// Use this for initialization
 	void Start () {
@@ -26,5 +26,16 @@ public class RadioController : MonoBehaviour {
 
         if (!audioSource.isPlaying)
             audioSource.PlayOneShot(songs[songIndex]);
+    }
+
+    public void TurnOffWithDelay(float delay)
+    {
+        Invoke("TurnOff", delay);
+    }
+
+    public void TurnOff()
+    {
+        audioSource.volume = 0;
+        audioSource.Stop();
     }
 }

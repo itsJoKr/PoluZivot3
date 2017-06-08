@@ -40,6 +40,10 @@ public class Raycaster : MonoBehaviour {
                 case "Radio":
                     SetCrosshairLabel("Turn on");
                     break;
+                case "Button":
+                    if (ElevatorManager.canPush)
+                        SetCrosshairLabel("Push");
+                    break;
                 default:
                     SetCrosshairLabel(null);
                     SetInfoLabel(null);
@@ -60,6 +64,11 @@ public class Raycaster : MonoBehaviour {
         }
 
         return null;
+    }
+
+    public void SetInstructionLabel(string text)
+    {
+        transform.GetChild(0).GetComponent<GUICrosshair>().instructionLabelText = text;
     }
 
     public void SetInfoLabel(string text)

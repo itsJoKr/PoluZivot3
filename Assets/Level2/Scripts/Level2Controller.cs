@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class Level2Controller : MonoBehaviour {
 
@@ -10,14 +11,18 @@ public class Level2Controller : MonoBehaviour {
     public AudioClip unlockAttemptSound;
     public AudioClip openDoorSound;
     public AudioClip openSafeSound;
+    public AudioClip elevatorSound;
 
+    private GameObject radio;
     private AudioSource audioSource;
     private Raycaster raycaster;
     private bool hasDoorKey;
     private bool hasSafeKey;
     private bool isDoorOpen;
     private bool isSafeOpen;
+    private bool isElevatorDown;
 
+    private Transform controllerParent;
 
     // Use this for initialization
     void Start () {
@@ -48,8 +53,28 @@ public class Level2Controller : MonoBehaviour {
                 case "Safe Door":
                     HandleSafeOpen(hitObject);
                     break;
+                case "Button":
+                    if (ElevatorManager.canPush)
+                        HandleElevator(hitObject);
+                    break;
             }
         }
+    }
+
+    private void HandleElevator(GameObject elevatorBtn)
+    {
+        if (isElevatorDown) return;
+
+        Transform elevator = elevatorBtn.transform.parent;
+
+        transform.parent.parent = elevator;
+        elevator.gameObject.GetComponent<Animator>().SetTrigger("Go");
+        isElevatorDown = true;
+        if (!audioSource.isPlaying)
+            audioSource.PlayOneShot(elevatorSound);
+        if (radio != null)
+            // turn off the radio so we don't hear it through whole scene
+            radio.GetComponent<RadioController>().TurnOffWithDelay(2);
     }
 
     private void HandleSafeOpen(GameObject safe)
@@ -67,6 +92,7 @@ public class Level2Controller : MonoBehaviour {
 
     private void HandlePlayRadio(GameObject radio)
     {
+        this.radio = radio;
         radio.GetComponent<RadioController>().Play();
     }
 
@@ -88,9 +114,9 @@ public class Level2Controller : MonoBehaviour {
             HandleDoorFail();
         else if (!isDoorOpen)
         {
+            doorWay.GetComponent<Animator>().SetTrigger("Open");
             if (!audioSource.isPlaying)
                 audioSource.PlayOneShot(openDoorSound);
-            doorWay.GetComponent<Animator>().SetTrigger("Open");
             isDoorOpen = true;
         }
     }
@@ -114,5 +140,5 @@ public class Level2Controller : MonoBehaviour {
         raycaster.SetInfoLabel("The door is locked");
         if (!audioSource.isPlaying)
             audioSource.PlayOneShot(openAttemptSound, 0.5f);
-    }
+    }    
 }

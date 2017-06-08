@@ -25,7 +25,7 @@ public class FlameThrower : MonoBehaviour {
         }
 	}
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         if (particleSystem.isPlaying)
             Die();

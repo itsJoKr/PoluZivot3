@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class Level1Controller : MonoBehaviour {
     
@@ -70,7 +71,7 @@ public class Level1Controller : MonoBehaviour {
         // easter egg joke
         if (!audioSource.isPlaying)
         {
-            GetComponentInParent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().ForceStop();
+            GetComponentInParent<FirstPersonController>().ForceStop();
             this.toilet = toilet;
             audioSource.PlayOneShot(useToiletSound);
             Invoke("FlushToilet", useToiletSound.length);
@@ -85,7 +86,7 @@ public class Level1Controller : MonoBehaviour {
 
     private void FlushToilet()
     {
-        GetComponentInParent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().ForceStart();
+        GetComponentInParent<FirstPersonController>().ForceStart();
         if (toilet != null) toilet.GetComponent<ToiletController>().Flush();
     }
 

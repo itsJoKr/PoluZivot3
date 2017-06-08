@@ -28,7 +28,7 @@ public class CreepyFaceController : MonoBehaviour {
         GetComponent<Animator>().SetTrigger("Float");
         if (!audioSource.isPlaying)
         {
-            audioSource.PlayDelayed(0.5f);
+            audioSource.PlayDelayed(0.3f);
         }
     }
 }

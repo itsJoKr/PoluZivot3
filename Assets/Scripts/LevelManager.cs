@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -16,13 +17,17 @@ public class LevelManager : MonoBehaviour {
     public string nextLevel;
     public float loadLevelDelay = 3.0f;
     public GameObject gameOverCanvas;
+    public GameObject gameFinishedCanvas;
     public GameObject UICamera;
+    public GameObject UICameraFin;
 
     // Use this for initialization
     void Start ()
     {
         if (gameOverCanvas != null)
             gameOverCanvas.SetActive(false);
+        if (gameFinishedCanvas != null)
+            gameFinishedCanvas.SetActive(false);
     }
 	
 	// Update is called once per frame
@@ -56,6 +61,16 @@ public class LevelManager : MonoBehaviour {
         UICamera.GetComponent<Camera>().depth = Camera.main.depth + 1;
     }
 
+    internal void SetGameFinished()
+    {
+        Destroy(crosshair);
+        if (gameOverCanvas != null)
+            Destroy(gameOverCanvas);
+        if (gameFinishedCanvas != null)
+            gameFinishedCanvas.SetActive(true);
+        UICameraFin.GetComponent<Camera>().depth = Camera.main.depth + 1;
+    }
+
     private void FadeOut()
     {
         alpha += fadeDir * fadeSpeed * Time.deltaTime;
@@ -76,5 +91,10 @@ public class LevelManager : MonoBehaviour {
     private void LoadNextScene()
     {
         SceneManager.LoadScene(nextLevel);
+    }
+
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }
