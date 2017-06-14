@@ -49,8 +49,8 @@ public class LevelFinishHandler : MonoBehaviour {
 
     public void DieWithGameFinish()
     {
-        fpsController.UnlockCursor();
-        fpsController.enabled = false;
+        //fpsController.UnlockCursor();
+        //fpsController.enabled = false;
         levelManager.SetGameFinished();
     }
 }

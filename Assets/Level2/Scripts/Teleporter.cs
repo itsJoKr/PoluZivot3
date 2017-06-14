@@ -8,13 +8,15 @@ public class Teleporter : MonoBehaviour {
     public GameObject destinationTeleporter;
     public GameObject crosshair;
     public bool autoTeleport;
+    public AudioClip teleportSound;
 
     private bool canTeleport;
     private Transform teleportingObject;
+    private AudioSource audioSource;
 
 	// Use this for initialization
 	void Start () {
-		
+        audioSource = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -32,6 +34,7 @@ public class Teleporter : MonoBehaviour {
         Vector3 destPosition = destinationTeleporter.transform.position;
         teleportingObject.position = new Vector3(destPosition.x, destPosition.y + 1, destPosition.z);
         //teleportingObject.rotation = Quaternion.AngleAxis(destRotation.eulerAngles.y - 90, Vector3.up);
+        audioSource.PlayOneShot(teleportSound);
     }
 
     void OnTriggerEnter(Collider other)

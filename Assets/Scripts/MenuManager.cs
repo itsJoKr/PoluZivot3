@@ -7,7 +7,7 @@ public class MenuManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        MusicManager.MM.PlayLevelMusic(1);
 	}
 	
 	// Update is called once per frame

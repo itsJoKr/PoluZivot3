@@ -63,14 +63,14 @@ public class MusicManager : MonoBehaviour {
         }
     }
 
-    public void PlaySituationClip(AudioClip ac)
+    public void PlaySituationClip(AudioClip ac, bool loop = false)
     {
 
         //StartCoroutine(FadeSoundOut(audioSource, 0.2f));
         FadeTime = 0.5f;
         fadingOut = true;
         audioSource.clip = ac;
-        audioSource.loop = false;
+        audioSource.loop = loop;
         audioSource.PlayDelayed(FadeTime);
         Invoke("ContinueLevelMusic", ac.length + FadeTime);
     }
@@ -98,6 +98,11 @@ public class MusicManager : MonoBehaviour {
         audioSource.PlayDelayed(delay);
     }
     
+    public void StopAll()
+    {
+        audioSource.Stop();
+    }
+
     //IEnumerator FadeSoundOut(AudioSource audioSource, float FadeTime)
     //{
     //    float startVolume = audioSource.volume;

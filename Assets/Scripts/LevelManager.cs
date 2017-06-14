@@ -68,7 +68,11 @@ public class LevelManager : MonoBehaviour {
             Destroy(gameOverCanvas);
         if (gameFinishedCanvas != null)
             gameFinishedCanvas.SetActive(true);
-        UICameraFin.GetComponent<Camera>().depth = Camera.main.depth + 1;
+        else
+        {
+            LoadNextLevel();
+        }
+        //UICameraFin.GetComponent<Camera>().depth = Camera.main.depth + 1;
     }
 
     private void FadeOut()
